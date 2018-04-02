@@ -9,20 +9,20 @@ int main()
 	std::system("color F3");
 	std::cout << "Reshade injector by ChangerTeam | reshade.me\n";
 
-	if (ProcessWorker::GetProcessId(L"csgo.exe") != 0)
+	if (ProcessWorker::GetProcessId(L"Warcraft III.exe") != 0)
 	{
 		system("color FC");
-        Utils::WaitForInput("csgo.exe is already started! => reshade injection failed :(\n");
-		return EXIT_FAILURE; // ó ìåíÿ òàêå áûëî, áèáëèîòåêà êàêàÿ-òî êîðÿâî ïîäêëá÷åíà!
+        Utils::WaitForInput("Warcraft III.exe is already started! => reshade injection failed :(\n");
+		return EXIT_FAILURE; // Ã³ Ã¬Ã¥Ã­Ã¿ Ã²Ã ÃªÃ¥ Ã¡Ã»Ã«Ã®, Ã¡Ã¨Ã¡Ã«Ã¨Ã®Ã²Ã¥ÃªÃ  ÃªÃ ÃªÃ Ã¿-Ã²Ã® ÃªÃ®Ã°Ã¿Ã¢Ã® Ã¯Ã®Ã¤ÃªÃ«Ã¡Ã·Ã¥Ã­Ã !
 	}
 
-	std::cout << "Looking for csgo.exe process...\n";
+	std::cout << "Looking for Warcraft III.exe process...\n";
 
 	do
 	{
         std::this_thread::sleep_for(std::chrono::milliseconds(13));
 	}
-	while (!ProcessWorker::GetProcessId(L"csgo.exe"));
+	while (!ProcessWorker::GetProcessId(L"Warcraft III.exe"));
 
 	std::cout << "Injection status -> ";
 
@@ -35,7 +35,7 @@ int main()
     }
     std::wcscat(working_dir, L"d3d9.dll");
     
-	auto eExitStatus = ProcessWorker::InjectToProcess(L"csgo.exe", working_dir);
+	auto eExitStatus = ProcessWorker::InjectToProcess(L"Warcraft III.exe", working_dir);
     if(eExitStatus == SUCCESS) 
     {
         std::system("color F2");
